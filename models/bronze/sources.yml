@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: adventureworks-gcp
+    database: concise-quarter-402712 # gcp project id
+    schema: raw_dataset # gcp dataset
+    description: Tabelas de origem GCP database AdventureWorks
+    tables:
+      - name: product
