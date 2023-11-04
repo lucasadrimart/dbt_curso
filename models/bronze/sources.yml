@@ -8,3 +8,4 @@ sources:
     tables:
       - name: product
       - name: productcategory
+      - name: productsubcategory
