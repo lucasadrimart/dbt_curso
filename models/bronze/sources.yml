@@ -7,3 +7,4 @@ sources:
     description: Tabelas de origem GCP database AdventureWorks
     tables:
       - name: product
+      - name: productcategory
