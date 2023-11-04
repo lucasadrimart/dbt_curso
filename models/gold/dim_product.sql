@@ -3,13 +3,13 @@ with stg_product as
         select *
         from {{ref('stg_product')}}
     ),
-stg_product_category as
+stg_productcategory as
     (
         select *
         from {{ref('stg_productcategory')}}
     
     ),
-stg_product_subcategory as
+stg_productsubcategory as
     (
         select *
         from {{ref('stg_productsubcategory')}}
@@ -28,14 +28,14 @@ transformation as
         stg_product.productnumber,
         stg_product.color,
         stg_product.class,
-        stg_product_category.product_category_name,
-        stg_product_subcategory.product_subcategory_name
+        stg_productcategory.product_category_name,
+        stg_productsubcategory.product_subcategory_name
     from
         stg_product
-        left join stg_product_subcategory PSC
-        on stg_product.productsubcategoryid = PSC.productsubcategoryid
-        left join stg_product_category PC
-        on PSC.productcategoryid = PC.productcategoryid
+        left join stg_productsubcategory
+        on stg_product.productsubcategoryid = stg_productsubcategory.productsubcategoryid
+        left join stg_productcategory
+        on stg_productsubcategory.productcategoryid = stg_productcategory.productcategoryid
 
 )
 
