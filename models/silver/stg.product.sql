@@ -3,11 +3,25 @@ with source_data as (
         productid
         , name as product_name
         , safetystocklevel
-         
+        , finishedgoodsflag
+        , class
+        , makeflag
+        , productnumber
+        , reorderpoint
+        , modifieddate
+        , rowguid
+        , productmodelid
+        , weightunitmeasurecode
+        , standardcost
+        , productsubcategoryid
+        , listprice
+        , daystomanufacture
+        , productline
+        , color
+        , sellstartdate
+        , weight as product_weight
+    from {{ source('adventureworks-gcp', 'product')}}
 
-
-
-    from {{source('adventureworks-gcp','product')}}
 )
 
 select * 
